@@ -30,9 +30,15 @@ static void upnp_event_send(struct upnp_event_notify * obj)
 ```
 RETURN VALUE
 
-Upon  successful  return,  these  functions return the number of characters printed (excluding the null byte used to end output to strings).
+Upon successful return, functions return the number of characters printed 
+(excluding the null byte used to end output to strings).
 
-The functions snprintf() and vsnprintf() do not write more than size bytes (including the terminating  null byte ('\0')).  If the output was truncated due to this limit, then the return value is the number of characters (excluding the terminating null byte) which would have been written to the final string if enough space had been available. Thus, a return value of size or more means that the output was truncated.
+The functions snprintf() and vsnprintf() do not write more than size bytes 
+(including the terminating  null byte ('\0')).  If the output was truncated 
+due to this limit, then the return value is the number of characters 
+(excluding the terminating null byte) which would have been written to the 
+final string if enough space had been available. Thus, a return value of size 
+or more means that the output was truncated.
 ```
 
 ## Usage
