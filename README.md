@@ -1,7 +1,7 @@
 # Miniupnpd <=v2.1 read out-of-bounds vulnerability (PoC)
 
 * This vulnerability has been fixed within miniupnpd's master branch (https://github.com/miniupnp/miniupnp/commit/bec6ccec63cadc95655721bc0e1dd49dac759d94).
-* The vulnerability is triggered when sending a **SUBSCRIBE** request with a callback uri `obj->path` that is greater than 527 bytes.
+* The vulnerability is triggered when sending a **SUBSCRIBE** request with a callback uri `obj->path` that is greater than 526 bytes.
 * The root cause is due to the lack of validating the return value of `snprintf()` since `sprintf()` returns the value of how many bytes it *could* of copied, not how many bytes it did copy.
 * As of Jan-25-2019 the PoC within this repro has been successfully works against Google Wifi.
   * Other devices that utilize `miniupnpd` may be vulnerable as well.
@@ -59,5 +59,8 @@ optional arguments:
                         Amount of arbitrary heap data to leak (in Kb).
                         (default: 1)
 ```
+
+## Video
+[![asciicast](https://asciinema.org/a/6PYTXJjkiNWx20RH5cWuZS1ie.svg)](https://asciinema.org/a/6PYTXJjkiNWx20RH5cWuZS1ie)
 
 - 0wl
