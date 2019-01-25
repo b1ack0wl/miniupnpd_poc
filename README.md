@@ -11,7 +11,7 @@
 static void upnp_event_prepare(struct upnp_event_notify * obj)
 {
 
-	obj->buffersize = 1024;
+	obj->buffersize = 1024; /* Static Buffer Size */
 	obj->buffer = malloc(obj->buffersize);
 	[...]
 	obj->tosend = snprintf(obj->buffer, obj->buffersize, notifymsg,
